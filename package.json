@@ -1,0 +1,10 @@
+{
+  "name": "calculator",
+  "version": "0.0.1",
+  "dependencies": {
+    "jest": "^24.9.0"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
