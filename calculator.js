@@ -23,11 +23,18 @@ function multiplier(a, b) {
     return a * b;
 }
 
-function calculate(val1, val2) {
+function parseValue(val1, val2) {
     xVal = +document.getElementById(val1).value;
     yVal = +document.getElementById(val2).value;
+    return [xVal, yVal];
+}
+
+function calculate(val1, val2) {
+    xVal = parseValue(val1, val2)[0];
+    yVal = parseValue(val1, val2)[1];
+
     if (plus.selected)
-        document.calc.answer.value = add(xVal, yVal);
+        return document.calc.answer.value = add(xVal, yVal);
     if (minus.selected)
         document.calc.answer.value = substract(xVal, yVal);
     if (divide.selected)
@@ -37,5 +44,5 @@ function calculate(val1, val2) {
 }
 
 
-module.exports = {add: add, substract: substract, divider: divider, multiplier: multiplier};
+module.exports = {add: add, substract: substract, divider: divider, multiplier: multiplier, parseValue: parseValue} ;
 
